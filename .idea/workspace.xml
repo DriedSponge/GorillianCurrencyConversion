@@ -11,8 +11,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d30c596-2425-4193-b146-b501032e79be" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Home.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TextInput.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Home.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/Home.svelte" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,8 +46,16 @@
       <option name="presentableId" value="Default" />
       <updated>1619505911612</updated>
       <workItem from="1619505912649" duration="1102000" />
-      <workItem from="1619534405211" duration="19180000" />
+      <workItem from="1619534405211" duration="26661000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial Stuff">
+      <created>1619576085811</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1619576085811</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -63,10 +72,15 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial Stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial Stuff" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="461" y="164" key="SettingsEditor" timestamp="1619545068448">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2381" y="164" key="SettingsEditor" timestamp="1619581722711">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1619545068448" />
+    <state x="2381" y="164" key="SettingsEditor/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1619581722711" />
   </component>
 </project>

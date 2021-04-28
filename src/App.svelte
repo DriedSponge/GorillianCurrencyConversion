@@ -1,7 +1,8 @@
 <script>
 import  Home from "./Home.svelte"
+export let name;
 </script>
-<Home />
+<Home name="{name}" />
 <style global lang="postcss">
 	@tailwind base;
 	@tailwind components;
