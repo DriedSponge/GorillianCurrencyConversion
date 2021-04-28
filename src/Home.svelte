@@ -1,7 +1,6 @@
 <script>
     export let name;
     const conversions = ["USD", "VBucks", "Fortnite Gold"]
-    import TextInput from "./TextInput.svelte";
 </script>
 <main>
     <div class="container max-w-6xl mx-auto px-4 pt-5">
@@ -9,19 +8,21 @@
             <h1 class="lg:text-4xl text-2xl font-bold text-center mb-5">{name}</h1>
             <div class="flex flex-row  flex-wrap md:flex-nowrap">
                 <div class="mx-1 w-full my-2">
-                    <TextInput/>
-                </div>
-                <div class="mx-1 my-2 w-full flex flex-row">
+                    <input id="input" type="number"/>
                     <div class="w-full">
-                        <select id="conversion">
+                        <select>
                             {#each conversions as item}
                                 <option>{item}</option>
                             {/each}
                         </select>
                     </div>
-                    <span class="mx-1 md:mx-2 lg:text-xl text-lg align-middle inline-block">&#8644;</span>
+                </div>
+                <span class="text-center font-bold w-full my-1 text-2xl align-middle md:hidden" >&#8645;</span>
+                <span class="text-center  font-bold align-middle mx-2 my-auto text-xl hidden md:inline-block" >&#8644;</span>
+                <div class="mx-1 w-full my-2">
+                    <input id="output" type="number"/>
                     <div class="w-full">
-                        <select id="conversion2">
+                        <select>
                             {#each conversions as item}
                                 <option>{item}</option>
                             {/each}
@@ -41,6 +42,20 @@
     }
 
     select, input {
-        @apply transition duration-300 ease-in-out focus:ring-1 shadow-inner w-full p-1 focus:border-blue-300 rounded-md border-solid focus:outline-none text-lg ;
+        @apply transition duration-300 ease-in-out focus:ring-1 w-full p-1 focus:border-blue-300 border-solid focus:outline-none text-lg ;
+    }
+    input {
+        @apply rounded-t-lg;
+    }
+    select{
+        @apply rounded-b-lg border-t-0;
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    input[type=number] {
+        -moz-appearance: textfield;
     }
 </style>
