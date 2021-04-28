@@ -1,17 +1,19 @@
 <script>
-    export let label = "Text Input";
+    export let label = null;
     export let tag ="forminput";
 </script>
-<div class="mx-1">
+{#if label}
     <label for="{tag}" class="text-lg">{label}</label>
-    <input id="{tag}" class="transition
-    duration-300
-     ease-in-out
-      focus:ring-1
-      shadow-inner
-       w-full p-1
-       rounded-md
-       border-solid
-       focus:outline-none"
-    />
-</div>
+{/if}
+<input id="{tag}" type="number"/>
+
+<style lang="scss">
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+</style>
