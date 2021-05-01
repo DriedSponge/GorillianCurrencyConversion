@@ -5,32 +5,43 @@
         {name:"VBucks",sym:"",rate:7},
         {name:"Fortnite Gold",sym:"",rate:34},
     ]
-    let convertingFrom;
     let convertingTo =  {name:"USD",sym:"$",rate:3};
-    let convertFromVal = 0.00;
-    let convertedAmt = 0.00
+    let oput = 0;
+    let gput = 0;
+    let swapped = false;
+    $:{
+        if(swapped){
+            gput = oput / convertingTo.rate
+        }else{
+            oput = gput * convertingTo.rate
+        }
+    }
 </script>
 <main>
     <div class="container max-w-6xl mx-auto px-4 pt-5">
         <div class="container bg-white rounded-lg py-5 px-3 w-full shadow-2xl">
             <h1 class="lg:text-4xl text-2xl font-bold text-center mb-3">{name}</h1>
             <br>
-            <h2 class="text-center font-bold text-lg lg:text-xl mb-3">Converting from Gorillian to {convertingTo.name}</h2>
-            <div class="flex flex-row  flex-wrap md:flex-nowrap">
+            <h2 class="text-center font-bold text-lg lg:text-xl mb-3">Converting from {swapped ? convertingTo.name : "Gorillian"} to {!swapped ? convertingTo.name : "Gorillian"}</h2>
+            <div class="flex flex-row  flex-wrap md:flex-nowrap justify-center">
                 <div class="mx-1 w-full my-2">
-                    <input id="input" bind:value={convertFromVal} placeholder="0.00" type="number"/>
+                    <label for="input" class="hidden">Enter amount of gorillian dollars</label>
+                    <input disabled={swapped} id="input" bind:value={gput} placeholder="0.00" type="number"/>
                     <div class="w-full">
                         <select disabled class="appearance-none">
                                 <option>🍌 Gorillian Dollars</option>
                         </select>
                     </div>
                 </div>
-                <span class="text-center w-full select-none font-bold my-1 text-2xl align-middle md:hidden">&#8645;</span>
-                <span class="text-center select-none font-bold align-middle mx-2 my-auto text-xl hidden md:inline-block" >&#8644;</span>
+                <button class="appearance-none my-auto font-bold text-center transform transition duration-300 ease-in-out rounded-full h-12 w-12" class:-rotate-180={swapped} on:click={()=>{swapped = !swapped}}>
+                    <span class="text-2xl md:hidden">&#8595;</span>
+                    <span class="text-xl hidden md:inline">&#8594;</span>
+                </button>
                 <div class="mx-1 w-full my-2">
-                    <input id="output" disabled value={convertFromVal * convertingTo.rate} placeholder="0.00"/>
+                    <label for="output" class="hidden">Resulting amount</label>
+                    <input disabled={!swapped} id="output" bind:value={oput} placeholder="0.00"/>
                     <div class="w-full">
-                        <select bind:value={convertingTo}>
+                        <select bind:value={convertingTo} class="appearance-none">
                             {#each currencies as currency}
                                 <option  value="{currency}" selected="{currency.name === convertingTo}">{currency.name}</option>
                             {/each}
