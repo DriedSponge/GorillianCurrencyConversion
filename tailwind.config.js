@@ -13,6 +13,8 @@ module.exports = {
   variants: {
     extend: {
       textColor: ['visited'],
+      backgroundColor: ['active','disabled'],
+      borderColor: ['active','disabled'],
     },
   },
   plugins: [],
