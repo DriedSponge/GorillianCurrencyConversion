@@ -34,7 +34,7 @@
                     </div>
                 </div>
                 <div class="my-auto">
-                    <button class="border-none appearance-none my-auto font-bold text-center transform transition duration-300 ease-in-out rounded-full h-12 w-12 bg-red-500 active:bg-red-500 text-white" class:-rotate-180={swapped} on:click={()=>{swapped = !swapped}}>
+                    <button class="switch-button transition transform ease-in-out duration-300" class:-rotate-180={swapped} on:click={()=>{swapped = !swapped}}>
                         <span class="text-2xl md:hidden"><i class="fas fa-arrow-down"></i></span>
                         <span class="text-xl hidden md:inline"><i class="fas fa-arrow-right"></i></span>
                     </button>
@@ -66,10 +66,13 @@
     }
 
     select, input {
-        @apply shadow-lg border border-gray-200 transition duration-300 ease-in-out focus:ring-0 w-full p-1 focus:border-blue-300 border-solid focus:outline-none text-lg;
+        @apply shadow-lg border border-gray-200 w-full p-1  border-solid text-lg;
+        @apply focus:ring-0 focus:border-blue-300 focus:outline-none;
+        @apply transition duration-300 ease-in-out;
     }
     input {
-        @apply rounded-t-lg disabled:bg-yellow-200;
+        @apply rounded-t-lg;
+        @apply disabled:bg-yellow-200 disabled:select-none;
     }
     select{
         @apply rounded-b-lg border-t-0;
@@ -82,7 +85,8 @@
     input[type=number] {
         -moz-appearance: textfield;
     }
-    a:visited{
-
+    .switch-button{
+        @apply border-none appearance-none my-auto font-bold text-center rounded-full h-12 w-12 bg-red-500 text-white focus:outline-none;
+        @apply active:bg-red-300;
     }
 </style>

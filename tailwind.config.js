@@ -15,6 +15,10 @@ module.exports = {
       textColor: ['visited'],
       backgroundColor: ['active','disabled'],
       borderColor: ['active','disabled'],
+      userSelect: ['disabled'],
+      width: ['hover'],
+      height: ['hover'],
+      borderWidth:['focus','active']
     },
   },
   plugins: [],
