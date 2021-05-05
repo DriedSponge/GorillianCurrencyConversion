@@ -5,18 +5,6 @@ body {
     font-family: Roboto, sans-serif;
 }
 
-select, input {
-    @apply shadow-lg border border-gray-200 w-full p-1 border-solid text-lg;
-    @apply focus:ring-0 focus:border-blue-300 focus:outline-none;
-    @apply transition duration-300 ease-in-out;
-}
-input {
-    @apply rounded-t-lg rounded-b-none;
-    @apply disabled:bg-yellow-200 disabled:select-none;
-}
-select{
-    @apply rounded-b-lg border-t-0 rounded-t-none;
-}
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
