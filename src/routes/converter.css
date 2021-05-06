@@ -1,10 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 body {
     background-color: #0E1013;
     font-family: Roboto, sans-serif;
 }
-
+select, input {
+    @apply border-none w-full p-1 text-2xl appearance-none;
+    @apply focus:ring-0 focus:outline-none;
+    @apply transition duration-300 ease-in-out;
+}
+input {
+    @apply rounded-t-lg rounded-b-none;
+}
+input[readonly]{
+    @apply bg-red-500 select-none appearance-none text-white;
+}
+select{
+    @apply rounded-b-lg border-t-0 rounded-t-none shadow-lg;
+}
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
@@ -13,10 +29,12 @@ input::-webkit-inner-spin-button {
 input[type=number] {
     -moz-appearance: textfield;
 }
-.switch-button{
-    @apply border-none appearance-none my-auto font-bold text-center rounded-full h-12 w-12 bg-red-500 text-white focus:outline-none;
-    @apply active:bg-red-300;
+.switch-button {
+    @apply border-none appearance-none md:my-auto my-2 font-bold text-center rounded-full h-12 w-12 bg-red-500 text-white;
 }
-.test{
-    text-align: center;
+.switch-button:focus{
+    @apply outline-none;
+}
+.switch-button:active{
+    @apply bg-red-300;
 }

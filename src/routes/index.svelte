@@ -1,5 +1,4 @@
 <script>
-    import "./converter.css"
     const currencies = [
         {name: "USD", sym: "$", rate: 3},
         {name: "VBucks", sym: "", rate: 7},
@@ -27,7 +26,7 @@
 <div class="flex flex-row  flex-wrap md:flex-nowrap justify-center">
     <div class="mx-1 w-full my-2">
         <label for="input" class="hidden">Enter amount of gorillian dollars</label>
-        <input disabled={swapped} id="input" bind:value={gput} placeholder="0.00" type="number"/>
+        <input readonly={swapped} id="input" bind:value={gput} placeholder="0.00" type="number"/>
         <div class="w-full">
             <select disabled class="appearance-none">
                 <option>🍌 Gorillian Dollars</option>
@@ -35,7 +34,7 @@
         </div>
     </div>
     <div class="my-auto">
-        <button class="switch-button transition transform ease-in-out duration-300" class:-rotate-180={swapped}
+        <button class="switch-button transition-transform transform ease-in-out duration-300" class:-rotate-180={swapped}
                 on:click={()=>{swapped = !swapped}}>
             <span class="text-2xl md:hidden"><i class="fas fa-arrow-down"></i></span>
             <span class="text-xl hidden md:inline"><i class="fas fa-arrow-right"></i></span>
@@ -44,7 +43,7 @@
 
     <div class="mx-1 w-full my-2">
         <label for="output" class="hidden">Resulting amount</label>
-        <input disabled={!swapped} id="output" bind:value={oput} placeholder="0.00"/>
+        <input readonly={!swapped} id="output" bind:value={oput} placeholder="0.00" type="number"/>
         <div class="w-full">
             <select bind:value={convertingTo} class="appearance-none">
                 {#each currencies as currency}
@@ -57,7 +56,6 @@
 <p class="text-center mt-4 text-gray-300 font-bold italic select-none text-sm md:text-md">In Banana We Trust &bull;
     <a class="underline text-gray-300 hover:text-gray-300 visited:text-gray-300"
        href="https://github.com/DriedSponge/GorillianCurrencyConversion" target="_blank">GitHub</a></p>
-
-<!--<style lang="postcss">-->
-<!--    @import "converter.css";-->
-<!--</style>-->
+<style lang="postcss">
+    @import "./converter.css";
+</style>
