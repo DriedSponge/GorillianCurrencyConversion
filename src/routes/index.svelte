@@ -1,4 +1,5 @@
 <script>
+    import ValueInput from "../components/ValueInput.svelte"
     const currencies = [
         {name: "USD", sym: "$", rate: 3},
         {name: "VBucks", sym: "", rate: 7},
