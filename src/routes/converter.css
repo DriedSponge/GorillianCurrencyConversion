@@ -1,14 +1,7 @@
-
 select, input {
-    @apply border-none w-full p-1 text-2xl appearance-none;
+    @apply  w-full p-1 text-2xl appearance-none;
     @apply focus:ring-0 focus:outline-none;
     @apply transition duration-300 ease-in-out;
-}
-input {
-    @apply rounded-t-lg rounded-b-none;
-}
-input[readonly]{
-    @apply bg-red-500 select-none appearance-none text-white;
 }
 select{
     @apply rounded-b-lg border-t-0 rounded-t-none shadow-lg;

@@ -10,7 +10,7 @@
     @tailwind base;
     @tailwind components;
     @tailwind utilities;
-    :global(body) {
+    :global(body)  {
         background-color: #0E1013;
         font-family: Roboto, sans-serif;
     }

@@ -11,9 +11,9 @@
     let swapped = false;
     $:{
         if (swapped) {
-            gput = oput / convertingTo.rate
+            gput = isNaN(oput) ? "Invalid Input" : oput / convertingTo.rate
         } else {
-            oput = gput * convertingTo.rate
+            oput = isNaN(gput) ? "Invalid Input" : gput * convertingTo.rate
         }
     }
 </script>
@@ -26,8 +26,7 @@
     to {!swapped ? convertingTo.name : "Gorillian"}</h2>
 <div class="flex flex-row  flex-wrap md:flex-nowrap justify-center">
     <div class="mx-1 w-full my-2">
-        <label for="input" class="hidden">Enter amount of gorillian dollars</label>
-        <input readonly={swapped} id="input" bind:value={gput} placeholder="0.00" type="number"/>
+        <ValueInput bind:val={gput} place="0.00" active={!swapped} lable="Enter amount of gorillian dollars" />
         <div class="w-full">
             <select disabled class="appearance-none">
                 <option>🍌 Gorillian Dollars</option>
@@ -43,8 +42,7 @@
     </div>
 
     <div class="mx-1 w-full my-2">
-        <label for="output" class="hidden">Resulting amount</label>
-        <input readonly={!swapped} id="output" bind:value={oput} placeholder="0.00" type="number"/>
+        <ValueInput bind:val={oput} place="0.00" active={swapped} lable="Resulting amount" />
         <div class="w-full">
             <select bind:value={convertingTo} class="appearance-none">
                 {#each currencies as currency}
