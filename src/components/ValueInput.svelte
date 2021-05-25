@@ -9,7 +9,7 @@
        class="rounded-t-lg rounded-b-none border-gray-100 border-2 focus:border-blue-200"
        bind:value={val}
        placeholder="{place}"
-       inputmode="numeric"/>
+       inputmode="decimal"/>
 
 <style lang="postcss">
     input::-webkit-outer-spin-button,
@@ -26,8 +26,5 @@
 
     input[readonly]::placeholder{
         @apply text-white;
-    }
-    .nan{
-        @apply border-red-300;
     }
 </style>
