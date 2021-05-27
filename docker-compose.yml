@@ -38,4 +38,5 @@ services:
     working_dir: /var/www/html
     ports:
       - "3000:3000"
+      - "24678:24678"
     entrypoint: [ 'npm','run','dev','--','--host' ]
