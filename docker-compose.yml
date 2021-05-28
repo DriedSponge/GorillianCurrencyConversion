@@ -17,8 +17,18 @@ services:
     volumes:
       - ./src:/var/www/html
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
-  npm:
+  node:
     profiles: [ "prod" ]
+    image: node:current-alpine
+    container_name: node_gorillanet
+    networks:
+      - gorillanet
+    volumes:
+      - ./src:/var/www/html
+    working_dir: /var/www/html
+    entrypoint: [ 'npm','run','build' ]
+  npm:
+    profiles: [ "setup" ]
     image: node:current-alpine
     container_name: npm_gorillanet
     networks:
@@ -26,11 +36,11 @@ services:
     volumes:
       - ./src:/var/www/html
     working_dir: /var/www/html
-    entrypoint: [ 'npm','run','build' ]
-  npmdev:
+    entrypoint: [ 'npm']
+  nodedev:
     profiles: [ "dev" ]
-    image: node:current-alpine
-    container_name: npmdev_gorillanet
+    image: node:latest
+    container_name: nodedev_gorillanet
     networks:
       - gorillanet
     volumes:
