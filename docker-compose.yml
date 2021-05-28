@@ -29,7 +29,7 @@ services:
     entrypoint: [ 'npm','run','build' ]
   npm:
     profiles: [ "setup" ]
-    image: node:current-alpine
+    image: node:latest
     container_name: npm_gorillanet
     networks:
       - gorillanet
@@ -37,7 +37,9 @@ services:
       - ./src:/var/www/html
     working_dir: /var/www/html
     entrypoint: [ 'npm']
+    user: root
   nodedev:
+    user: root
     profiles: [ "dev" ]
     image: node:latest
     container_name: nodedev_gorillanet
