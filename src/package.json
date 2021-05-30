@@ -2,7 +2,7 @@
   "name": "gorillianunitconvert",
   "version": "0.0.1",
   "scripts": {
-    "dev": "svelte-kit dev",
+    "dev": "TAILWIND_TOUCH_DIR='/var/www/html/.tailwindcss/touch' svelte-kit dev",
     "build": "svelte-kit build",
     "preview": "svelte-kit preview"
   },
