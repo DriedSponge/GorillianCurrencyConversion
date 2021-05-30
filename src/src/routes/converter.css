@@ -6,12 +6,3 @@ select, input {
 select{
     @apply rounded-b-lg border-t-0 rounded-t-none shadow-lg;
 }
-.switch-button {
-    @apply border-none appearance-none md:my-auto my-2 font-bold text-center rounded-full h-12 w-12 bg-red-500 text-white;
-}
-.switch-button:focus{
-    @apply outline-none;
-}
-.switch-button:active{
-    @apply bg-red-300;
-}

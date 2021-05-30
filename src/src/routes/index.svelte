@@ -1,5 +1,7 @@
 <script>
     import ValueInput from "../components/ValueInput.svelte"
+    import SelectOption from "../components/SelectOption.svelte"
+    import SwitchButton from "../components/SwitchButton.svelte"
     const currencies = [
         {name: "USD", sym: "$", rate: 3},
         {name: "VBucks", sym: "", rate: 7},
@@ -28,27 +30,16 @@
     <div class="mx-1 w-full my-2">
         <ValueInput bind:val={gput} place="0.00" active={!swapped} lable="Enter amount of gorillian dollars" />
         <div class="w-full">
-            <select disabled class="appearance-none">
-                <option>🍌 Gorillian Dollars</option>
-            </select>
+            <SelectOption bind:val={convertingTo} active={false} options={[{name:"🍌 Gorillian Dollars",value:null}]} />
         </div>
     </div>
     <div class="my-auto">
-        <button class="switch-button transition-transform transform ease-in-out duration-300" class:-rotate-180={swapped}
-                on:click={()=>{swapped = !swapped}}>
-            <span class="text-2xl md:hidden"><i class="fas fa-arrow-down"></i></span>
-            <span class="text-xl hidden md:inline"><i class="fas fa-arrow-right"></i></span>
-        </button>
+        <SwitchButton bind:switched={swapped} />
     </div>
-
     <div class="mx-1 w-full my-2">
         <ValueInput bind:val={oput} place="0.00" active={swapped} lable="Resulting amount" />
         <div class="w-full">
-            <select bind:value={convertingTo} class="appearance-none">
-                {#each currencies as currency}
-                    <option value="{currency}" selected="{currency.name === convertingTo}">{currency.name}</option>
-                {/each}
-            </select>
+            <SelectOption bind:val={convertingTo} options={currencies} />
         </div>
     </div>
 </div>
