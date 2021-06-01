@@ -7,7 +7,7 @@ services:
     profiles: ["prod"]
     image: nginx:stable-alpine
     depends_on:
-      - npm
+      - node
     networks:
       - gorillanet
     container_name: nginx_gorillanet
@@ -19,7 +19,7 @@ services:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
   node:
     profiles: [ "prod" ]
-    image: node:current-alpine
+    image: node:12.20
     container_name: node_gorillanet
     networks:
       - gorillanet
@@ -29,7 +29,7 @@ services:
     entrypoint: [ 'npm','run','build' ]
   npm:
     profiles: [ "setup" ]
-    image: node:latest
+    image: node:12.20
     container_name: npm_gorillanet
     networks:
       - gorillanet
@@ -38,6 +38,8 @@ services:
     working_dir: /var/www/html
     entrypoint: [ 'npm']
     user: root
+    environment:
+      - npm_config_cache=/var/www/html/.npmcache
   nodedev:
     user: root
     profiles: [ "dev" ]

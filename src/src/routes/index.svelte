@@ -22,7 +22,7 @@
 <svelte:head>
     <title>Gorillian Dollar Converter</title>
 </svelte:head>
-<h1 class="lg:text-4xl text-2xl font-bold text-center mb-3">DriedSponges Gorillian Dollar Converter</h1>
+<h1 class="lg:text-4xl text-2xl font-bold text-center mb-3">DriedSponges Gorillian Dollar Converter R</h1>
 <br>
 <h2 class="text-center font-bold text-lg lg:text-xl mb-3">Converting from {swapped ? convertingTo.name : "Gorillian"}
     to {!swapped ? convertingTo.name : "Gorillian"}</h2>
@@ -47,5 +47,7 @@
     <a class="underline text-gray-300 hover:text-gray-300 visited:text-gray-300"
        href="https://github.com/DriedSponge/GorillianCurrencyConversion" target="_blank">GitHub</a></p>
 <style lang="postcss">
-    @import "./converter.css";
+    select{
+        @apply rounded-b-lg border-t-0 rounded-t-none shadow-lg;
+    }
 </style>

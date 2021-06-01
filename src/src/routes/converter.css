@@ -1,8 +1,0 @@
-select, input {
-    @apply  w-full p-1 text-2xl appearance-none;
-    @apply focus:ring-0 focus:outline-none;
-    @apply transition duration-300 ease-in-out;
-}
-select{
-    @apply rounded-b-lg border-t-0 rounded-t-none shadow-lg;
-}

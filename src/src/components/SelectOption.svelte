@@ -8,3 +8,8 @@
         <option value="{option}">{option.name}</option>
     {/each}
 </select>
+<style>
+    select{
+        @apply rounded-b-lg border-t-0 rounded-t-none shadow-lg;
+    }
+</style>
