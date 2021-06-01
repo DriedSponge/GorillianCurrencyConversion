@@ -21,10 +21,6 @@
         -moz-appearance: textfield !important;
     }
     input[readonly]{
-        @apply bg-red-500 select-none appearance-none text-white border-red-500;
-    }
-
-    input[readonly]::placeholder{
-        @apply text-white;
+        @apply bg-red-500 select-none appearance-none text-white border-red-500 placeholder-white;
     }
 </style>
