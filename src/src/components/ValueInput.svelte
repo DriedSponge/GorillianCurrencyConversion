@@ -1,9 +1,10 @@
 <script>
     export let place = "Enter value...";
+    export let label = "Form Input";
     export let active = true;
     export let val = 0;
 </script>
-<label for="input" class="hidden">Enter amount of gorillian dollars</label>
+<label for="input" class="sr-only">{label}</label>
 <input id="input"
        readonly={!active}
        class="rounded-t-lg rounded-b-none border-gray-100 border-2 focus:border-blue-200"

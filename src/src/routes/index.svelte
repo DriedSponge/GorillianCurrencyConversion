@@ -18,17 +18,19 @@
             oput = isNaN(gput) ? "Invalid Input" : gput * convertingTo.rate
         }
     }
+    let description = "Here at Gorilla "
 </script>
 <svelte:head>
     <title>Gorillian Dollar Converter</title>
+    <meta property="og:description" content="">
+    <meta property="description" content="Convert">
 </svelte:head>
-<h1 class="lg:text-4xl text-2xl font-bold text-center mb-3">DriedSponges Gorillian Dollar Converter</h1>
 <br>
 <h2 class="text-center font-bold text-lg lg:text-xl mb-3">Converting from {swapped ? convertingTo.name : "Gorillian"}
     to {!swapped ? convertingTo.name : "Gorillian"}</h2>
 <div class="flex flex-row  flex-wrap md:flex-nowrap justify-center">
     <div class="mx-1 w-full my-2">
-        <ValueInput bind:val={gput} place="0.00" active={!swapped} lable="Enter amount of gorillian dollars" />
+        <ValueInput bind:val={gput} place="0.00" active={!swapped} label="Enter amount of gorillian dollars" />
         <div class="w-full">
             <SelectOption bind:val={convertingTo} active={false} options={[{name:"🍌 Gorillian Dollars",value:null}]} />
         </div>
@@ -37,12 +39,9 @@
         <SwitchButton bind:switched={swapped} />
     </div>
     <div class="mx-1 w-full my-2">
-        <ValueInput bind:val={oput} place="0.00" active={swapped} lable="Resulting amount" />
+        <ValueInput bind:val={oput} place="0.00" active={swapped} label="Resulting amount" />
         <div class="w-full">
             <SelectOption bind:val={convertingTo} options={currencies} />
         </div>
     </div>
 </div>
-<p class="text-center mt-4 text-gray-300 font-bold italic select-none text-sm md:text-md">In Banana We Trust &bull;
-    <a class="underline text-gray-300 hover:text-gray-300 visited:text-gray-300"
-       href="https://github.com/DriedSponge/GorillianCurrencyConversion" target="_blank">GitHub</a></p>
