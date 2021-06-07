@@ -2,6 +2,8 @@
     import ValueInput from "../components/ValueInput.svelte"
     import SelectOption from "../components/SelectOption.svelte"
     import SwitchButton from "../components/SwitchButton.svelte"
+    import {meta} from  "../stores/meta"
+
     const currencies = [
         {name: "USD", sym: "$", rate: 3},
         {name: "VBucks", sym: "", rate: 7},
@@ -18,13 +20,11 @@
             oput = isNaN(gput) ? "Invalid Input" : gput * convertingTo.rate
         }
     }
-    let description = "Here at Gorilla "
+    $meta.description = "Our mission is to unite global markets under one unit, the Gorillian unit. Our experts have meticulously poked and prodded at our units foundation, ensuring it's perfection and sustainability for the global economy."
 </script>
 <svelte:head>
     <title>Gorillian Unit Converter - Dollars</title>
     <meta property="og:title" content="Gorillian Unit Converter - Dollars">
-    <meta property="og:description" content="Our mission is to unite global markets under one unit, the Gorillian unit. Our experts have meticulously poked and prodded at our units foundation, ensuring it's perfection and sustainability for the global economy.">
-    <meta property="description" content="Our mission is to unite global markets under one unit, the Gorillian unit. Our experts have meticulously poked and prodded at our units foundation, ensuring it's perfection and sustainability for the global economy.">
 </svelte:head>
 <br>
 <h2 class="text-center font-bold text-lg lg:text-xl mb-3">Converting from {swapped ? convertingTo.name : "Gorillian"}
