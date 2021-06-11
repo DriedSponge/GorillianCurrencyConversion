@@ -1,6 +1,9 @@
+<script>
+    import {meta} from  "../stores/meta"
+</script>
 <svelte:head>
-    <title>Gorillian Unit Converter - Weight</title>
-    <meta property="og:title" content="Gorillian Unit Converter - Dollars">
-    <meta property="og:description" content="Our mission is to unite global markets under one unit, the Gorillian unit. Our experts have meticulously poked and prodded at our units foundation, ensuring it's perfection and sustainability for the global economy.">
-    <meta property="description" content="Our mission is to unite global markets under one unit, the Gorillian unit. Our experts have meticulously poked and prodded at our units foundation, ensuring it's perfection and sustainability for the global economy.">
+    <title>
+        Weight | Gorillian Unit Converte
+    </title>
 </svelte:head>
+<p>Test</p>

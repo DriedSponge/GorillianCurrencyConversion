@@ -23,8 +23,8 @@
     $meta.description = "Our mission is to unite global markets under one unit, the Gorillian unit. Our experts have meticulously poked and prodded at our units foundation, ensuring it's perfection and sustainability for the global economy."
 </script>
 <svelte:head>
-    <title>Gorillian Unit Converter - Dollars</title>
-    <meta property="og:title" content="Gorillian Unit Converter - Dollars">
+    <title>Dollars | Gorillian Unit Converter</title>
+    <meta property="og:title" content="Dollars | Gorillian Unit Converter">
 </svelte:head>
 <br>
 <h2 class="text-center font-bold text-lg lg:text-xl mb-3">Converting from {swapped ? convertingTo.name : "Gorillian"}
