@@ -20,11 +20,12 @@
             oput = isNaN(gput) ? "Invalid Input" : gput * convertingTo.rate
         }
     }
-    $meta.description = "Our mission is to unite global markets under one unit, the Gorillian unit. Our experts have meticulously poked and prodded at our units foundation, ensuring it's perfection and sustainability for the global economy."
+    $meta.description = "Our mission is to unite global markets under one currency, the Gorillian Dollar. Our experts have meticulously poked\n" +
+        "                and prodded at our units foundation, ensuring it's perfection and sustainability for the global economy."
 </script>
 <svelte:head>
-    <title>Dollars | Gorillian Unit Converter</title>
-    <meta property="og:title" content="Dollars | Gorillian Unit Converter">
+    <title>Gorillian Dollar Converter</title>
+    <meta property="og:title" content="Gorillian Dollar Converter">
 </svelte:head>
 <br>
 <h2 class="text-center font-bold text-lg lg:text-xl mb-3">Converting from {swapped ? convertingTo.name : "Gorillian"}
