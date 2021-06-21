@@ -4,10 +4,6 @@
     import Nav from "../components/Nav.svelte"
     import {meta} from  "../stores/meta"
 </script>
-<svelte:head>
-    <meta property="og:description" content={$meta.description}>
-    <meta property="description" content={$meta.description}>
-</svelte:head>
 <main>
     <div class="container max-w-6xl mx-auto px-4 pt-5">
         <div class="container bg-white rounded-lg py-5 px-3 w-full shadow-2xl">
